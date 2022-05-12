@@ -12,8 +12,6 @@ import androidx.room.OnConflictStrategy
 @Dao
 interface AsteroidDao {
 
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    suspend fun insertAllAsteroids(asteroids: Array<DatabaseAsteroid>)
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllAsteroids(asteroids: ArrayList<Asteroid>)
 

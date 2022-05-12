@@ -12,22 +12,24 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.databinding.FragmentDetailBinding
+import com.udacity.asteroidradar.main.MainFragment
 import com.udacity.asteroidradar.main.MainViewModel
 
 class DetailFragment : Fragment() {
 
-    private val model: MainViewModel by activityViewModels()
+    //private val model: MainViewModel by activityViewModels()
+    @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
 
-       //val asteroid = DetailFragmentArgs.fromBundle(arguments).selectedAsteroid
+       val aster = DetailFragmentArgs.fromBundle(arguments!!).selectedAsteroid
 
-        binding.viewModel = model
+        //binding.viewModel = model
 
-        binding.asteroid = model.asteroid.value
-        // asteroid is non null but asteroid.value is null ^
+        binding.asteroid = aster
+        // asteroid is non null but asteroid est Diam and Distance f Earth are null ^
         binding.helpButton.setOnClickListener {
             displayAstronomicalUnitExplanationDialog()
         }

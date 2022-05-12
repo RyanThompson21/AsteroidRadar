@@ -47,7 +47,7 @@ class AsteroidRepository(private val db: AsteroidDatabase) {
             )
             val asteroids = parseAsteroidsJsonResult(JSONObject(asteroidsJSON))
             db.asteroidDao.insertAllAsteroids(asteroids)
-            // pic works fine, list is showing in the app
+
             val picJson = AsteroidApi.retrofitService.getApod(getTodaysDate(), Constants.API_KEY)
             val pic = parsePic(JSONObject(picJson))
             db.asteroidDao.insertPic(pic)
