@@ -13,7 +13,7 @@ import androidx.room.OnConflictStrategy
 interface AsteroidDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllAsteroids(asteroids: ArrayList<Asteroid>)
+    suspend fun insertAllAsteroids(asteroids: Array<DatabaseAsteroid>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPic(pic: PictureOfDay?)
@@ -25,16 +25,16 @@ interface AsteroidDao {
     fun getAnAsteroid(id: Long): LiveData<Asteroid?>
 
     @Query("select * from asteroids order by closeApproachDate desc")
-    fun getAllAsteroids(): LiveData<List<DatabaseAsteroid>>
+    fun getAllAsteroids(): LiveData<List<Asteroid>>
 
     @Query("select * from asteroids where closeApproachDate=:todayDate " +
             "order by closeApproachDate")
-    fun getTodaysAsteroids(todayDate: String): LiveData<List<DatabaseAsteroid>>
+    fun getTodaysAsteroids(todayDate: String): LiveData<List<Asteroid>>
 
     @Query("select * from asteroids where closeApproachDate =:todayDate " +
             "and isPotentiallyHazardous=:isHazardous ")
     fun getPotentiallyHazardousFromToday(
         todayDate: String,
         isHazardous: Boolean
-    ): LiveData<List<DatabaseAsteroid>>
+    ): LiveData<List<Asteroid>>
 }

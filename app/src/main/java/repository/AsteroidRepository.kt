@@ -14,26 +14,29 @@ import org.json.JSONObject
 
 class AsteroidRepository(private val db: AsteroidDatabase) {
 
-    val asteroids: LiveData<List<Asteroid>> =
-        Transformations.map(db.asteroidDao.getAllAsteroids()) {
-            it.asDomainModel()
-        }
+    val asteroids: LiveData<List<Asteroid>> = db.asteroidDao.getAllAsteroids()
+//        Transformations.map(db.asteroidDao.getAllAsteroids()) {
+//            it.asDomainModel()
+//        }
 
-    val today: LiveData<List<Asteroid>> = Transformations.map(
-        db.asteroidDao.getTodaysAsteroids(
-            getTodaysDate()
-        )
-    ) {
-        it.asDomainModel()
-    }
+    val today: LiveData<List<Asteroid>> = db.asteroidDao.getTodaysAsteroids(getTodaysDate())
+//        Transformations.map(
+//        db.asteroidDao.getTodaysAsteroids(
+//            getTodaysDate()
+//        )
+//    ) {
+//        it.asDomainModel()
+//    }
 
-    val hazardous: LiveData<List<Asteroid>> = Transformations.map(
-        db.asteroidDao.getPotentiallyHazardousFromToday(
-            getTodaysDate(), true
-        )
-    ) {
-        it.asDomainModel()
-    }
+    val hazardous: LiveData<List<Asteroid>> = db.asteroidDao
+        .getPotentiallyHazardousFromToday(getTodaysDate(), true)
+//        Transformations.map(
+//        db.asteroidDao.getPotentiallyHazardousFromToday(
+//            getTodaysDate(), true
+//        )
+//    ) {
+//        it.asDomainModel()
+//    }
 
     // picture of day
     val pic: LiveData<PictureOfDay> = db.asteroidDao.getPic()
@@ -46,8 +49,8 @@ class AsteroidRepository(private val db: AsteroidDatabase) {
                 endDate, Constants.API_KEY
             )
             val asteroids = parseAsteroidsJsonResult(JSONObject(asteroidsJSON))
-            db.asteroidDao.insertAllAsteroids(asteroids)
-
+            db.asteroidDao.insertAllAsteroids(asteroids.asDataBaseModel())
+            // asteroids have NO null values when going into the DB ^
             val picJson = AsteroidApi.retrofitService.getApod(getTodaysDate(), Constants.API_KEY)
             val pic = parsePic(JSONObject(picJson))
             db.asteroidDao.insertPic(pic)
