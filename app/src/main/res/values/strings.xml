@@ -18,6 +18,15 @@
     <string name="potentially_hazardous_asteroid_image">Potentially hazardous asteroid image</string>
     <string name="not_hazardous_asteroid_image">Not hazardous asteroid image</string>
     <string name="this_is_nasa_s_picture_of_day_showing_nothing_yet">This is NASA\'s picture of day, showing nothing yet</string>
-    <string name="nasa_picture_of_day_content_description_format">NASA\'s picture of day: %s</string>
+    <string name="nasa_picture_of_day_content_description_format">NASA\'s picture of day %s</string>
+    <string name="nasa_picture_of_day_title_content_description_format">NASA\'s picture of day is called %s</string>
     <string name="show_hazardous">View potentially hazardous asteroids</string>
+    <string name="hazard_description">The asteroid is potentially hazardous</string>
+    <string name="non_hazard_description">The asteroid is not hazardous</string>
+    <string name="close_date_description">The close approach date is %s</string>
+    <string name="magnitude_description">The absolute magnitude of this asteroid is %s astronomical units</string>
+    <string name="help_button_descrip">additional information about absolute magnitude</string>
+    <string name="diameter_description">The asteroid has an estimated diameter of %s km</string>
+    <string name="velocity_description">This asteroid has a velocity of %s km per second</string>
+    <string name="distance_description">This asteroid is %s astronomical units away from Earth</string>
 </resources>

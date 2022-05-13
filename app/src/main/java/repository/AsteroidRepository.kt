@@ -14,7 +14,7 @@ import org.json.JSONObject
 
 class AsteroidRepository(private val db: AsteroidDatabase) {
 
-    val asteroids: LiveData<List<Asteroid>> = db.asteroidDao.getAllAsteroids()
+    val asteroids: LiveData<List<Asteroid>> = db.asteroidDao.getAllAsteroids(getTodaysDate())
 //        Transformations.map(db.asteroidDao.getAllAsteroids()) {
 //            it.asDomainModel()
 //        }
@@ -50,7 +50,6 @@ class AsteroidRepository(private val db: AsteroidDatabase) {
             )
             val asteroids = parseAsteroidsJsonResult(JSONObject(asteroidsJSON))
             db.asteroidDao.insertAllAsteroids(asteroids.asDataBaseModel())
-            // asteroids have NO null values when going into the DB ^
             val picJson = AsteroidApi.retrofitService.getApod(getTodaysDate(), Constants.API_KEY)
             val pic = parsePic(JSONObject(picJson))
             db.asteroidDao.insertPic(pic)

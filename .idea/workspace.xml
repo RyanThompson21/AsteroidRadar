@@ -13,10 +13,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6137257e-4242-4d6d-8472-fb4b48776e51" name="Default Changelist" comment="second commit: app is almost fully functional. All asteroids are their losing est Diam and distance from Earth sometime after getting read in from the JSON.">
+    <list default="true" id="6137257e-4242-4d6d-8472-fb4b48776e51" name="Default Changelist" comment="Third commit: app is almost fully functional. Only thing left is making sure talk back is functional. Detail fragment now correctly displays all information">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udacity/asteroidradar/database/AsteroidDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udacity/asteroidradar/database/AsteroidDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/repository/AsteroidRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/repository/AsteroidRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652376369444</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Third commit: app is almost fully functional. Only thing left is making sure talk back is functional. Detail fragment now correctly displays all information">
+      <created>1652383250600</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652383250600</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,7 +177,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit: app is almost fully functional, just the detail fragment not showing any information. The asteroid its getting passed is has null values" />
     <MESSAGE value="second commit: app is almost fully functional. All asteroids are their losing est Diam and distance from Earth sometime after getting read in from the JSON." />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit: app is almost fully functional. All asteroids are their losing est Diam and distance from Earth sometime after getting read in from the JSON." />
+    <MESSAGE value="Third commit: app is almost fully functional. Only thing left is making sure talk back is functional. Detail fragment now correctly displays all information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit: app is almost fully functional. Only thing left is making sure talk back is functional. Detail fragment now correctly displays all information" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -190,16 +202,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/udacity/asteroidradar/Asteroid.kt</url>
           <line>27</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/repository/AsteroidRepository.kt</url>
-          <line>51</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/repository/AsteroidRepository.kt</url>
-          <line>50</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
