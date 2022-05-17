@@ -1,35 +1,21 @@
 package com.udacity.asteroidradar.api
 
 import android.annotation.SuppressLint
-import android.widget.Toast
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.udacity.asteroidradar.Asteroid
-import com.udacity.asteroidradar.AsteroidData
 import com.udacity.asteroidradar.Constants
 import com.udacity.asteroidradar.Constants.API_QUERY_DATE_FORMAT
 import com.udacity.asteroidradar.PictureOfDay
 import org.json.JSONObject
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.coroutines.coroutineContext
-
-
-private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(ScalarsConverterFactory.create()).baseUrl(Constants.BASE_URL).build()
-
-enum class AsteroidApiFilter(val num:Int) {
-    SHOW_TODAY(num = 0),
-    SHOW_WEEK(num = 7)
-}
 
 interface AsteroidApiService {
 

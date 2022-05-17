@@ -17,7 +17,7 @@ import com.udacity.asteroidradar.main.MainViewModel
 
 class DetailFragment : Fragment() {
 
-    //private val model: MainViewModel by activityViewModels()
+
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -26,17 +26,14 @@ class DetailFragment : Fragment() {
 
        val aster = DetailFragmentArgs.fromBundle(arguments!!).selectedAsteroid
 
-        //binding.viewModel = model
-
         binding.asteroid = aster
-        // asteroid is non null but asteroid est Diam and Distance f Earth are null ^
+
         binding.helpButton.setOnClickListener {
             displayAstronomicalUnitExplanationDialog()
         }
 
         return binding.root
     }
-
 
     private fun displayAstronomicalUnitExplanationDialog() {
         val builder = AlertDialog.Builder(requireActivity())

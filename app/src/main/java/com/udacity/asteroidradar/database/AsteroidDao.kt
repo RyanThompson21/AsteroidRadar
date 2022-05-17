@@ -21,9 +21,6 @@ interface AsteroidDao {
     @Query("select * from picOfDay")
     fun getPic(): LiveData<PictureOfDay>
 
-    @Query("select * from asteroids where id=:id")
-    fun getAnAsteroid(id: Long): LiveData<Asteroid?>
-
     @Query("select * from asteroids where closeApproachDate =:todayDate " +
             "order by closeApproachDate")
     fun getTodaysAsteroids(todayDate: String): LiveData<List<Asteroid>>
